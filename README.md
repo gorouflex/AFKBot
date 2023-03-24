@@ -13,4 +13,4 @@ Need:
 
 
 
-Warning: I do not have any not responsible if you were ban in games using it,so use at you own risk!
+Warning: I do not have any not responsible if you were ban in games when using it,so use at you own risk!

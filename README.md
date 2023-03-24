@@ -12,5 +12,6 @@ Need:
 -Pynput using: pip install pynput
 
 
+You may have to wait 5-10 second to stop the script when press Pause/Stop button,or you can spam ESC key to stop it
 
 Warning: I do not have any not responsible if you were ban in games when using it,so use at your own risk!

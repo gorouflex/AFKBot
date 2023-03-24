@@ -1,66 +1,41 @@
-from pynput.keyboard import Key, Listener, Controller as KeyboardController
-from pynput.mouse import Button, Controller as MouseController
-import time
+import pyautogui
+import random
 import threading
-import tkinter as tk
-
-keyboard = KeyboardController()
-mouse = MouseController()
-
-def press_keys():
-    for _ in range(3):
-        keyboard.press('a')
-        time.sleep(2)
-        keyboard.release('a')
-        keyboard.press('s')
-        time.sleep(2)
-        keyboard.release('s')
-        keyboard.press('d')
-        time.sleep(2)
-        keyboard.release('d')
-        keyboard.press('w')
-        time.sleep(2)
-        keyboard.release('w')
-
-def click_mouse():
-    for _ in range(5):
-        mouse.click(Button.right)
-    for _ in range(4):
-        mouse.click(Button.left)
-
-def loop():
-    while run:
-        press_keys()
-        click_mouse()
-        time.sleep(0.1)
+from tkinter import *
 
 def start():
-    global run
-    run = True
-    t = threading.Thread(target=loop)
+    global stop_flag
+    stop_flag = False
+    t = threading.Thread(target=press_keys)
     t.start()
-
 def stop():
-    global run
-    run = False
-
-def on_press(key):
-    if key == Key.esc:
-        stop()
-
-root = tk.Tk()
-root.title("Spamming Script")
-
-frame = tk.Frame(root)
-frame.pack()
-
-start_button = tk.Button(frame, text="Start", command=start)
-start_button.pack(side=tk.LEFT)
-
-stop_button = tk.Button(frame, text="Stop", command=stop)
-stop_button.pack(side=tk.LEFT)
-
-listener = Listener(on_press=on_press)
-listener.start()
-
+    global stop_flag
+    stop_flag = True
+def press_keys():
+    keys = ['a', 's', 'd', 'w', 'c', 'e', 'x', 'q']
+    while not stop_flag:
+        key = random.choice(keys)
+        pyautogui.keyDown(key)
+        pyautogui.sleep(2)
+        pyautogui.keyUp(key)
+        if random.random() < 0.5:
+            pyautogui.click(button='right')
+        else:
+            pyautogui.click(button='left')
+        x, y = random.randint(0, 1920), random.randint(0, 1080)
+        pyautogui.moveTo(x, y)
+root = Tk()
+root.geometry("500x300")
+root.title(''.join(random.choices('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', k=random.randint(10,24))))
+start_button = Button(root, text="Start", command=start, font=("Helvetica", 16))
+start_button.pack(pady=20)
+stop_button = Button(root, text="Stop", command=stop, font=("Helvetica", 16))
+stop_button.pack(pady=20)
+credit_label = Label(root,text="Credit: GorouFlex aka KRJ", font=("Helvetica", 12))
+credit_label.pack(side=BOTTOM,pady=10)
+def update_title():
+    root.title(''.join(random.choices('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', k=random.randint(10,24))))
+    root.after(1000, update_title)
+update_title()
+root.bind('<Escape>', lambda e: root.destroy())
 root.mainloop()

@@ -3,7 +3,8 @@ A bot that prevent you AFK in a match
 
 Before run the bot please make you installed Python 
 
-Require:
+Need:
+
 -Pyautogui using: pip install Pyautogui
 
 -Keyboard using: pip install keyboard

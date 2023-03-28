@@ -3,7 +3,8 @@ A bot that prevent you AFK in a match
 
 Before run the bot please make you installed Python 
 
-Future:
+Features:
+
 -Move the mouse into random places
 
 -Do some game action key

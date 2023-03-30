@@ -11,6 +11,12 @@ Features:
 
 -Press ESC to instanly exit ( Testing 1/2 )
 
-You may have to wait 5-10 second to stop the script when press Pause/Stop button,or you can spam ESC key to stop it
+For Py version please install these modules:
+
+pip install pyautogui
+
+pip install tkinter
+
+pip install webbrowser
 
 Warning: I do not have any not responsible if you were ban in games when using it,so use at your own risk!

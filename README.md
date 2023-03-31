@@ -33,11 +33,20 @@ Before run the bot please make you installed Python
 
 https://user-images.githubusercontent.com/98001973/229130925-c2a00b58-bc13-402d-8ffd-71c67b0a90d8.mp4
         
-                                                          Quick Preview (Version 2.0)
+<p align="center">
+<h1 align="center">Quick Preview Video (Version 2.0)</h1>
+</p>
+
 <p align="center">          
   <img src="https://user-images.githubusercontent.com/98001973/229132137-33f93472-6617-4bbf-9562-805bd3f67418.png">
 </p>
            
-                                                           GUI Preview (Version 2.0)
+<p align="center">
+<h1 align="center">GUI Preview (Version 2.0)</h1>
+</p>
+
+### Special thanks to :
+
+- @NotchApple1703 : For GUI source code
 
 # ⚠️Warning⚠️: This is for learning purposes only, I am not responsible if you were ban in game!

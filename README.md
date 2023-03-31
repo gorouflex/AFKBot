@@ -30,6 +30,6 @@ Preview (Version 2.0)
 
 
 ![image](https://user-images.githubusercontent.com/98001973/229131365-86ce5b6c-ee48-4e47-9a8d-c0461c80300c.png)
-( GUI Preview )
+###                                     ( GUI Preview )
 
 ### Warning: I do not have any not responsible if you were ban in games when using it,so use at your own risk!

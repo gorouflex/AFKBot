@@ -3,20 +3,20 @@ A bot that prevent you AFK in a match
 
 Before run the bot please make you installed Python 
 
-Features:
+# Features:
 
--Move the mouse into random places
+- Move the mouse into random places
 
--Do some game action key
+- Do some game action key (ex: FPS games)
 
--Press ESC to instanly exit ( Testing 1/2 )
+- Press ESC to instanly exit (Only worked when the main window is focused on)
 
-For Py version please install these modules:
+# For Py version please install these modules:
 
-pip install pyautogui
+- pip install pyautogui
 
-pip install tkinter
+- pip install tkinter
 
-pip install webbrowser
+- pip install webbrowser
 
 Warning: I do not have any not responsible if you were ban in games when using it,so use at your own risk!

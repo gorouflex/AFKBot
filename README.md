@@ -51,4 +51,4 @@ https://user-images.githubusercontent.com/98001973/229130925-c2a00b58-bc13-402d-
 
 - @NotchApple1703 : For GUI source code
 
-# ⚠️Warning⚠️: This is for learning purposes only, I am not responsible if you were ban in game!
+# ⚠️Warning⚠️: This is for education purposes only, I am not responsible if you were ban in game!

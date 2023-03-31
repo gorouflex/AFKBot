@@ -1,7 +1,10 @@
 # AFK Bot
-A bot that prevent you AFK in a match 
 
-Before run the bot please make you installed Python 
+A Bot that prevent you AFK in some games
+
+Write by Python language
+
+Before run the bot please make you installed Python
 
 ## Features:
 
@@ -11,7 +14,7 @@ Before run the bot please make you installed Python
 
 - Press ESC to instanly exit (Only worked when the main window is focused on)
 
-## For Py version please install these modules:
+### For Py/Source version please install these modules:
 
 ```
  pip install pyautogui
@@ -20,6 +23,8 @@ Before run the bot please make you installed Python
 
  pip install webbrowser
 ```
+
+### For Portable version : Just make you installed Python
 
 # Quick Preview
 

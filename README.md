@@ -14,7 +14,7 @@ Before run the bot please make sure you installed Python
 
 - Press ESC to instanly exit (Only worked when the main window is focused on)
 
-- Atrractive GUI with auto theme set with system theme
+- Interactive GUI with auto theme set with system theme
 
 ### For Py/Source version please install these modules:
 

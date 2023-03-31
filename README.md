@@ -24,7 +24,7 @@ Before run the bot please make you installed Python
  pip install webbrowser
 ```
 
-### For Portable version : Just make you installed Python
+### For Portable version : Just make you installed Python ✅
 
 # Quick Preview
 
@@ -40,4 +40,4 @@ https://user-images.githubusercontent.com/98001973/229130925-c2a00b58-bc13-402d-
            
                                                            GUI Preview (Version 2.0)
 
-# Warning: This is for learning purposes only, I am not responsible if you were ban in game!
+# ⚠️Warning⚠️: This is for learning purposes only, I am not responsible if you were ban in game!

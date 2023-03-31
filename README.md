@@ -4,7 +4,7 @@ A Bot that prevent you AFK in some games
 
 Write by Python language
 
-Before run the bot please make you installed Python
+Before run the bot please make sure you installed Python
 
 ## Features:
 
@@ -24,7 +24,7 @@ Before run the bot please make you installed Python
  pip install webbrowser
 ```
 
-### For Portable version : Just make you installed Python ✅
+### For Portable version : Just make you sure installed Python ✅
 
 # Quick Preview
 

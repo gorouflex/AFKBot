@@ -40,4 +40,4 @@ https://user-images.githubusercontent.com/98001973/229130925-c2a00b58-bc13-402d-
            
                                                            GUI Preview (Version 2.0)
 
-### Warning: I do not have any not responsible if you were ban in games when using it,so use at your own risk!
+# Warning: This is for learning purposes only, I am not responsible if you were ban in game!

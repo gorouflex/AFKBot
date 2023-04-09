@@ -10,7 +10,7 @@ Before run the bot please make sure you installed Python
 
 - Move the mouse into random places
 
--Random clicks
+- Random clicks
 
 - Do some game action key (A,W,S,D and space)
 

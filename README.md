@@ -10,11 +10,11 @@ Before run the bot please make sure you installed Python
 
 - Move the mouse into random places
 
-- Do some game action key (ex: FPS games)
+-Random clicks
 
-- Press ESC to instanly exit (Only worked when the main window is focused on)
+- Do some game action key (A,W,S,D and space)
 
-- Interactive GUI with auto theme set with system theme
+- Interactive GUI
 
 ### For Py/Source version please install these modules:
 

@@ -14,7 +14,7 @@ Before run the bot please make sure you installed Python
 
 - Do some game action key (A,W,S,D and space)
 
-- Interactive GUI
+- Interactive GUI with random window title ( 14 strings )
 
 ### For Py/Source version please install these modules:
 

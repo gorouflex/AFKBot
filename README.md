@@ -28,23 +28,20 @@ Before run the bot please make sure you installed Python
 
 ### For Portable version : Just make you sure installed Python ✅
 
-# Quick Preview
+# Preview
 
-
-
-
-https://user-images.githubusercontent.com/98001973/229130925-c2a00b58-bc13-402d-8ffd-71c67b0a90d8.mp4
+https://user-images.githubusercontent.com/98001973/230877736-38198e89-3737-4675-8b69-cbdf7b24d03b.mp4
         
 <p align="center">
-<h1 align="center">Quick Preview Video (Version 2.0)</h1>
+<h1 align="center">Quick Preview Video</h1>
 </p>
 
 <p align="center">          
-  <img src="https://user-images.githubusercontent.com/98001973/229132137-33f93472-6617-4bbf-9562-805bd3f67418.png">
+  <img src="https://user-images.githubusercontent.com/98001973/230878016-8bf3cc30-fc20-4332-b42f-d252ab799545.png">
 </p>
            
 <p align="center">
-<h1 align="center">GUI Preview (Version 2.0)</h1>
+<h1 align="center">GUI Preview</h1>
 </p>
 
 ### Special thanks to :

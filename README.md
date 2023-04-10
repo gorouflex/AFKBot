@@ -44,8 +44,8 @@ https://user-images.githubusercontent.com/98001973/230877736-38198e89-3737-4675-
 <h1 align="center">GUI Preview</h1>
 </p>
 
-### Special thanks to :
+## Special thanks to :
 
-- @NotchApple1703 : For GUI source code
+# - @NotchApple1703 : For GUI source code
 
 # ⚠️Warning⚠️: This is for education purposes only, I am not responsible if you were ban in game!

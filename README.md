@@ -24,6 +24,8 @@ Before run the bot please make sure you installed Python
  pip install customtkinter
 
  pip install webbrowser
+ 
+ pip install pillow 
 ```
 
 ### For Portable version : Just make you sure installed Python ✅

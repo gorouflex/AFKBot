@@ -21,7 +21,7 @@ Before run the bot please make sure you installed Python
 ```
  pip install pyautogui
 
- pip install tkinter
+ pip install customtkinter
 
  pip install webbrowser
 ```

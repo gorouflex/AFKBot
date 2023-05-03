@@ -1,0 +1,5 @@
+pyautogui
+customtkinter
+pillow
+pynput
+requests

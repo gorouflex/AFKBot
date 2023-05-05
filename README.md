@@ -25,7 +25,7 @@ For Py/Source version please download [requirements.txt](https://github.com/goro
 pip install -r requirements.txt 
 ```
 
-For Portable version just simple run .exe file
+For Portable version just simply run .exe file
 
 # Updater 
 ### How to use?

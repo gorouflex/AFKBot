@@ -40,8 +40,9 @@ Tutorial video later
 ### Cautions
 Before update please close AFKBot
 
-If your wifi is so potato,the updater will not respond and stop working
+If your wifi is so potato,the updater will not respond and stop working after 15 seconds
 
+While download and update the updater might stop respond but still working, please wait until it says **Updated!**
 # Preview
 
 https://user-images.githubusercontent.com/98001973/230877736-38198e89-3737-4675-8b69-cbdf7b24d03b.mp4

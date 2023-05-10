@@ -9,8 +9,7 @@ Write by Python language
 - [Features](#features)
 - [Installation](#installation)
 - [Updater](#updater)
-- [Preview] (#preview)
-- 
+- [Preview](#preview)
 # Features
 - Move the mouse into random places
 

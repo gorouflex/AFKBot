@@ -1,8 +1,10 @@
 # AFKBot
 
 A Bot that prevent you AFK in some games
-
 Write by Python language
+### Support
+<a href="https://patreon.com/AFKBotbyGorouFlex"><img src="https://img.shields.io/endpoint.svg?url=https://moshef9.wixsite.com/patreon-badge/_functions/badge/?username=AFKBotbyGorouFlex" alt="Patreon donate button" /> </a>
+
 <!-- TABLE OF CONTENTS -->
 # Table of Contents
 

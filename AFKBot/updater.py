@@ -31,24 +31,25 @@ def download_file():
         f.write(r.content)
     with zipfile.ZipFile('AFKBot.zip', 'r') as zip_ref:
         zip_ref.extractall()
-    label.configure(text="Updated complete!")
+    label.configure(text="Update successfully!")
     os.remove("AFKBot.zip")
 
 
 root = ctk.CTk()
-root.geometry("600x125")
-root.title("AFKBot Updater")
+root.geometry("400x130")
+root.title("AFKBot Updater V2")
 icon_path = os.path.join(os.getcwd(), "assets", "app.ico")
 root.iconbitmap(icon_path)
 label = ctk.CTkLabel(root,
-                     text="Click the Update button to update the latest version of AFKBot (might take 10 seconds for "
-                          "update)")
-label.pack(pady=10)
-
+                     text="Click *Update* button to update to the latest version")
+label.pack(pady=1)
+caution_label = ctk.CTkLabel(root,
+                             text="It might take 20s (depend on your internet) to download and update")
+caution_label.pack(pady=1)
 button = ctk.CTkButton(root, text="Update", command=download_file)
-button.pack(pady=5)
+button.pack(pady=10)
 
-version_label = ctk.CTkLabel(root, text=f"Latest version: {get_latest_version()}")
+version_label = ctk.CTkLabel(root, text=f"Latest version on GitHub: {get_latest_version()}")
 version_label.pack(side="bottom")
 
 root.mainloop()

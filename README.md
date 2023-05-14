@@ -9,6 +9,7 @@ Write by Python language
 - [Features](#features)
 - [Installation](#installation)
 - [Updater](#updater)
+- [Config](#config)
 - [Preview](#preview)
 # Features
 - Move the mouse into random places
@@ -40,9 +41,9 @@ Tutorial video later
 ### Cautions
 Before update please close AFKBot
 
-If your wifi is so potato,the updater will not respond and stop working after 15 seconds
-
 While download and update the updater might stop respond but still working, please wait until it says **Updated!**
+
+# Config
 # Preview
 
 https://user-images.githubusercontent.com/98001973/230877736-38198e89-3737-4675-8b69-cbdf7b24d03b.mp4

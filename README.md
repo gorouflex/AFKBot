@@ -23,16 +23,18 @@ Write by Python language
 - Simple GUI with random window title ( 8 strings )
 
 # Installation
-For Py/Source version please download [requirements.txt](https://github.com/gorouflex/afkbot/files/11384655/requirements.txt) and run 
+### For Py/Source version
+- Please download [requirements.txt](https://github.com/gorouflex/afkbot/files/11384655/requirements.txt) and run 
 ```
 pip install -r requirements.txt 
 ```
 
-For Portable version just simply run .exe file
+### For Portable version 
+- Just simply run .exe file
 
 # Updater 
 ### How to use?
-1.Download **updater.exe** from [Releases](https://github.com/gorouflex/afkbot/releases)
+1.Download **UpdaterV2.exe** from [Releases](https://github.com/gorouflex/afkbot/releases)
 
 2.Paste to the same folder where AFKBot is (example: C:\AFKBot\AFKBot.exe)
 
@@ -46,6 +48,7 @@ Before update please close AFKBot
 While download and update the updater might stop respond but still working, please wait until it says **Updated!**
 
 # Config
+**config.py** in assets folder
 # Preview
 
 https://user-images.githubusercontent.com/98001973/230877736-38198e89-3737-4675-8b69-cbdf7b24d03b.mp4

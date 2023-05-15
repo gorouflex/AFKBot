@@ -1,7 +1,8 @@
 # AFKBot
 
-A Bot that prevent you AFK in some games
-Write by Python language
+A bot that prevent you AFK in some games
+
+Open-source project write by Python
 ### Support
 <a href="https://patreon.com/GorouFlex"><img src="https://img.shields.io/endpoint.svg?url=https://moshef9.wixsite.com/patreon-badge/_functions/badge/?username=GorouFlex" alt="Patreon donate button" /> </a>
 
@@ -14,13 +15,12 @@ Write by Python language
 - [Config](#config)
 - [Preview](#preview)
 # Features
-- Move the mouse into random places
 
 - Random clicks
 
 - Do some game action key (A,W,S,D and space)
 
-- Simple GUI with random window title ( 8 strings )
+- Simple GUI with random window title
 
 # Installation
 ### For Py/Source version
@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 # Updater 
 ### How to use?
-1.Download **UpdaterV2.exe** from [Releases](https://github.com/gorouflex/afkbot/releases)
+1.Download **UpdaterV2.exe** from [Official Releases](https://github.com/gorouflex/afkbot/releases)
 
 2.Paste to the same folder where AFKBot is (example: C:\AFKBot\AFKBot.exe)
 
@@ -45,7 +45,7 @@ Tutorial video later
 ### Cautions
 Before update please close AFKBot
 
-While download and update the updater might stop respond but still working, please wait until it says **Updated!**
+While download and update the updater might stop respond but still working, please wait until it says **Update successfully!**
 
 # Config
 **config.py** in assets folder
@@ -68,7 +68,7 @@ https://github.com/gorouflex/afkbot/assets/98001973/cfb634fc-68ee-4e70-9c22-2746
 </p>
            
 
-# Special thanks to :
+# Special thanks to:
 
 ### @NotchApple1703 : For GUI source code
 

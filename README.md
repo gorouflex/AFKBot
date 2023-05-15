@@ -51,22 +51,25 @@ While download and update the updater might stop respond but still working, plea
 **config.py** in assets folder
 # Preview
 
-https://user-images.githubusercontent.com/98001973/230877736-38198e89-3737-4675-8b69-cbdf7b24d03b.mp4
+https://github.com/gorouflex/afkbot/assets/98001973/cfb634fc-68ee-4e70-9c22-27467728489e
         
 <p align="center">
-<h1 align="center">Quick Preview</h1>
+<h1 align="center">GUI and Updater</h1>
 </p>
 
 <p align="center">          
-  <img src="https://user-images.githubusercontent.com/98001973/230878016-8bf3cc30-fc20-4332-b42f-d252ab799545.png">
+  <img src="https://github.com/gorouflex/afkbot/assets/98001973/767745d9-df5c-4bb0-926a-8aac8f40b918">
+  <img src="https://github.com/gorouflex/afkbot/assets/98001973/c7831c29-41ce-4702-ba2c-4cc25d9830d6">
+  <img src="https://github.com/gorouflex/afkbot/assets/98001973/6078d0f7-f74b-4afb-8203-358595411fd7">
 </p>
-           
+
 <p align="center">
 <h1 align="center"> </h1>
 </p>
+           
 
 # Special thanks to :
 
-## @NotchApple1703 : For GUI source code
+### @NotchApple1703 : For GUI source code
 
 # ⚠️Warning⚠️: This is for education purposes only, I am not responsible if you were ban in game!

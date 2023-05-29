@@ -6,7 +6,6 @@ def press_keys(self):
     options = {
         "keys": ['a','s','d','w',' '],
         "buttons": ['left'],
-        "screen_size": (1920, 1080),
         "sleep_time": self.SLEEP_TIME * 1000
     }
 
@@ -23,7 +22,6 @@ def press_keys(self):
         return
     key = get_random_option(options["keys"])
     button = get_random_option(options["buttons"])
-    point = (secrets.randbelow(options["screen_size"][0]), secrets.randbelow(options["screen_size"][1]))
     press_key(key)
     click_button(button)
     self.after(options["sleep_time"], lambda: press_keys(self))

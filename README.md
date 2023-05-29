@@ -1,4 +1,4 @@
-# AFKBot
+# AFKBot - Project M
 
 A bot that prevent you AFK in some games
 
@@ -43,7 +43,7 @@ pip install -r requirements.txt
 Tutorial video later
 
 ### Cautions
-Before update please close AFKBot
+Before update please close AFKBot and backup your config file if need!
 
 While download and update the updater might stop respond but still working, please wait until it says **Update successfully!**
 

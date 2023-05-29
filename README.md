@@ -49,6 +49,7 @@ While download and update the updater might stop respond but still working, plea
 
 # Config
 **config.py** in assets folder
+
 You should change ```"keys": ['a','s','d','w',' ']``` , ```"buttons": ['left']``` and ```self.SLEEP_TIME = 2```
 # Preview
 

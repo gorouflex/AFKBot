@@ -25,4 +25,3 @@ def press_keys(self):
     press_key(key)
     click_button(button)
     self.after(options["sleep_time"], lambda: press_keys(self))
-

@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 # Updater 
 ### How to use?
-1.Download **UpdaterV2.exe** from [Official Releases](https://github.com/gorouflex/afkbot/releases)
+1.Download **UpdaterV2.1.exe** from [Official Releases](https://github.com/gorouflex/afkbot/releases)
 
 2.Paste to the same folder where AFKBot is (example: C:\AFKBot\AFKBot.exe)
 

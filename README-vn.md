@@ -1,62 +1,65 @@
-# AFKBot - Project M
+<h1 align="center">
+  AFKBot - Project M
+  <br>
 
-A bot that prevent you AFK in some games
+ </h1>
 
-Open-source project write by Python
-### Support
+<h4 align="center">Một con Bot giúp bạn tránh khỏi việc AFK trong một vài tựa game</h4>
+
+<h4 align="center">Dự án mã nguồn mở được viết bằng Python</h4>
+
+<p align="center">
 <a href="https://patreon.com/GorouFlex"><img src="https://img.shields.io/endpoint.svg?url=https://moshef9.wixsite.com/patreon-badge/_functions/badge/?username=GorouFlex" alt="Patreon donate button" /> </a>
 
-<!-- TABLE OF CONTENTS -->
-# Table of Contents
+<div>
+<p align="center">
+  <a href="https://github.com/gorouflex/afkbot/blob/main/README.md">English</a>
+  •
+  <a href="https://github.com/gorouflex/afkbot/blob/main/README-vn.md">Tiếng Việt</a>
+</p>
+</div>
 
-- [Features](#features)
-- [Installation](#installation)
-- [Updater](#updater)
-- [Config](#config)
-- [Preview](#preview)
-# Features
+# Tính năng
 
-- Random clicks
+- Nhấp chuột ngẫu nhiên
 
-- Do some game action key (A,W,S,D and space)
+- Làm 1 vài phím hành động, di chuyển (a,s,w,d,cách)
 
-- Simple GUI with random window title
+- Giao diện đơn giản với tên cửa sổ ngẫu nhiên
 
-# Installation
-### For Py/Source version
-- Please download [requirements.txt](https://github.com/gorouflex/afkbot/files/11384655/requirements.txt) and run 
+# Cài đặt
+### Đối với bản Source/Py
+- Hãy tải [requirements.txt](https://github.com/gorouflex/afkbot/files/11384655/requirements.txt) và chạy 
 ```
 pip install -r requirements.txt 
 ```
 
-### For Portable version 
-- Just simply run .exe file
+### Đối với bản Portable
+- Chỉ cần chạy file .exe :D
 
-# Updater 
-### How to use?
-1.Download **UpdaterV2.1.exe** from [Official Releases](https://github.com/gorouflex/afkbot/releases)
+# Cập nhật phần mềm
+### Sử dụng như thế nào?
+1.Tải **UpdaterV2.1.exe** từ [Official Releases](https://github.com/gorouflex/afkbot/releases)
 
-2.Paste to the same folder where AFKBot is (example: C:\AFKBot\AFKBot.exe)
+2.Copy và dán vào thư mục mà AFKBot đang tồn tại (vd: C:\AFKBot\AFKBot.exe)
 
-3.Run and click Update button
+3.Chạy và giao diện cập nhật sẽ hiện ra, ấn nút 'Update' và chờ!
 
-Tutorial video later
+### 1 vài lưu ý
+Trước khi cập nhật xin vui lòng tắt AFKBot và sao lưu file config trong thư mục assests nếu cần!
 
-### Cautions
-Before update please close AFKBot and backup your config file if need!
-
-While download and update the updater might stop respond but still working, please wait until it says **Update successfully!**
+Trong khi cập nhật, trình cập nhật có thể bị đơ (tùy vào mạng của bạn) hãy chờ đến khi nào hiện **Update successfully!** là đã cập nhật thành công
 
 # Config
-**config.py** in assets folder
+**config.py** ở trong thư mục assests
 
-You should change ```"keys": ['a','s','d','w',' ']``` , ```"buttons": ['left']``` and ```self.SLEEP_TIME = 2```
+Bạn có thể thay đổi nhưng điều chỉnh sau: ```"keys": ['a','s','d','w',' ']``` , ```"buttons": ['left']``` and ```self.SLEEP_TIME = 2```
 # Preview
 
 https://github.com/gorouflex/afkbot/assets/98001973/cfb634fc-68ee-4e70-9c22-27467728489e
         
 <p align="center">
-<h1 align="center">GUI and Updater</h1>
+<h1 align="center">Giao diện chính và Trình cập nhật</h1>
 </p>
 
 <p align="center">          
@@ -70,8 +73,8 @@ https://github.com/gorouflex/afkbot/assets/98001973/cfb634fc-68ee-4e70-9c22-2746
 </p>
            
 
-# Special thanks to:
+# Đặc biệt cảm ơn những người đóng góp sau đây:
 
-### @NotchApple1703 : For GUI source code
+### @NotchApple1703 : Ở phần mã nguồn giao diện
 
-# ⚠️Warning⚠️: This is for education purposes only, I am not responsible if you were ban in game!
+# ⚠️Lưu ý⚠️: Đây là phục vụ trong nhu cầu học tập, tôi không có trách nhiệm nào nếu bạn bị ban trong game!

@@ -75,6 +75,6 @@ https://github.com/gorouflex/afkbot/assets/98001973/cfb634fc-68ee-4e70-9c22-2746
 
 # Đặc biệt cảm ơn những người đóng góp sau đây:
 
-### @NotchApple1703 : Ở phần mã nguồn giao diện
+### @NotchApple1703 : Mã nguồn giao diện
 
 # ⚠️Lưu ý⚠️: Dự án này chỉ phục vụ cho nhu cầu học tập, tôi không có trách nhiệm nào nếu bạn bị ban trong game!

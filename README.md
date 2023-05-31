@@ -10,7 +10,7 @@
 
 <p align="center">
 <a href="https://patreon.com/GorouFlex"><img src="https://img.shields.io/endpoint.svg?url=https://moshef9.wixsite.com/patreon-badge/_functions/badge/?username=GorouFlex" alt="Patreon donate button" /> </a>
-
+<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/gorouflex/afkbot/total?style=plastic">
   <p align="center">
   <a href="#features">Features</a>
   •

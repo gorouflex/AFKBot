@@ -1,19 +1,36 @@
-# AFKBot - Project M
+<h1 align="center">
+  AFKBot - Project M
+  <br>
 
-A bot that prevent you AFK in some games
+ </h1>
 
-Open-source project write by Python
-### Support
+<h4 align="center">A bot that prevent you AFK in some games</h4>
+
+<h4 align="center">Open-source project write by Python</h4>
+
+<p align="center">
 <a href="https://patreon.com/GorouFlex"><img src="https://img.shields.io/endpoint.svg?url=https://moshef9.wixsite.com/patreon-badge/_functions/badge/?username=GorouFlex" alt="Patreon donate button" /> </a>
 
-<!-- TABLE OF CONTENTS -->
-# Table of Contents
+  <p align="center">
+  <a href="#features">Features</a>
+  •
+  <a href="#installation">Installation</a>
+  •
+  <a href="#updater">Updater</a>
+  •
+  <a href="#config">Config</a>
+  •
+  <a href="#preview">Preview</a>       
+</p>
 
-- [Features](#features)
-- [Installation](#installation)
-- [Updater](#updater)
-- [Config](#config)
-- [Preview](#preview)
+<div>
+<p align="center">
+  <a href="https://github.com/gorouflex/afkbot/blob/main/README.md">English</a>
+  •
+  <a href="https://github.com/gorouflex/afkbot/blob/main/README-vn.md">Tiếng Việt</a>
+</p>
+</div>
+
 # Features
 
 - Random clicks

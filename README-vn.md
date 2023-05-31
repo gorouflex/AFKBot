@@ -45,7 +45,7 @@ pip install -r requirements.txt
 
 3.Chạy và giao diện cập nhật sẽ hiện ra, ấn nút 'Update' và chờ!
 
-### 1 vài lưu ý
+### Lưu ý
 Trước khi cập nhật xin vui lòng tắt AFKBot và sao lưu file config trong thư mục assests nếu cần!
 
 Trong khi cập nhật, trình cập nhật có thể bị đơ (tùy vào mạng của bạn) hãy chờ đến khi nào hiện **Update successfully!** là đã cập nhật thành công
@@ -53,7 +53,7 @@ Trong khi cập nhật, trình cập nhật có thể bị đơ (tùy vào mạn
 # Config
 **config.py** ở trong thư mục assests
 
-Bạn có thể thay đổi nhưng điều chỉnh sau: ```"keys": ['a','s','d','w',' ']``` , ```"buttons": ['left']``` and ```self.SLEEP_TIME = 2```
+Bạn có thể thay đổi nhưng điều chỉnh sau: ```"keys": ['a','s','d','w',' ']``` , ```"buttons": ['left']``` và ```self.SLEEP_TIME = 2```
 # Preview
 
 https://github.com/gorouflex/afkbot/assets/98001973/cfb634fc-68ee-4e70-9c22-27467728489e
@@ -77,4 +77,4 @@ https://github.com/gorouflex/afkbot/assets/98001973/cfb634fc-68ee-4e70-9c22-2746
 
 ### @NotchApple1703 : Ở phần mã nguồn giao diện
 
-# ⚠️Lưu ý⚠️: Đây là phục vụ trong nhu cầu học tập, tôi không có trách nhiệm nào nếu bạn bị ban trong game!
+# ⚠️Lưu ý⚠️: Dự án này chỉ phục vụ cho nhu cầu học tập, tôi không có trách nhiệm nào nếu bạn bị ban trong game!

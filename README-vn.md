@@ -7,10 +7,11 @@
 <h4 align="center">Một con Bot giúp bạn tránh khỏi việc AFK trong một vài tựa game</h4>
 
 <h4 align="center">Dự án mã nguồn mở được viết bằng Python</h4>
-
 <p align="center">
-<a href="https://patreon.com/GorouFlex"><img src="https://img.shields.io/endpoint.svg?url=https://moshef9.wixsite.com/patreon-badge/_functions/badge/?username=GorouFlex" alt="Patreon donate button" /> </a>
-
+<a href="https://patreon.com/gorouflex"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dgorouflex%26type%3Dpatrons%26suffix%3Dsponsors&style=for-the-badge" alt="Support me on Patreon" /></a>
+ <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/gorouflex/afkbot?style=for-the-badge">
+<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/gorouflex/afkbot/total?style=for-the-badge">
+<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/gorouflex/afkbot?style=for-the-badge">
 <div>
 <p align="center">
   <a href="https://github.com/gorouflex/afkbot/blob/main/README.md">English</a>

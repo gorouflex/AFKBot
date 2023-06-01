@@ -9,9 +9,10 @@
 <h4 align="center">Open-source project write by Python</h4>
 
 <p align="center">
-<a href="https://patreon.com/gorouflex"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dgorouflex%26type%3Dpatrons%26suffix%3Dsponsors&style=flat-square" alt="Support me on Patreon" /></a>
- <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/gorouflex/afkbot?style=flat-square">
-<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/gorouflex/afkbot/total?style=flat-square">
+<a href="https://patreon.com/gorouflex"><img src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dgorouflex%26type%3Dpatrons%26suffix%3Dsponsors&style=for-the-badge" alt="Support me on Patreon" /></a>
+ <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/gorouflex/afkbot?style=for-the-badge">
+<img alt="GitHub all releases" src="https://img.shields.io/github/downloads/gorouflex/afkbot/total?style=for-the-badge">
+<img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/gorouflex/afkbot?style=for-the-badge">
   <p align="center">
   <a href="#features">Features</a>
   •

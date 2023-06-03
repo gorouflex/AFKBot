@@ -32,6 +32,9 @@
   <a href="https://github.com/gorouflex/afkbot/blob/main/README-vn.md">Tiếng Việt</a>
 </p>
 </div>
+</h1>
+
+### Other project: [AFKBot Legacy](https://github.com/gorouflex/afkbotlegacy)
 
 # Features
 

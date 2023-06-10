@@ -45,8 +45,9 @@
 - Simple GUI with random window title
 
 # Installation
+
 ### For Py/Source version
-- Please download [requirements.txt](https://github.com/gorouflex/afkbot/files/11384655/requirements.txt) and run 
+- Please download [requirements.txt](https://github.com/gorouflex/afkbot/files/11712913/requirements.txt) and run 
 ```
 pip install -r requirements.txt 
 ```

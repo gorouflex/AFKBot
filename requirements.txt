@@ -3,3 +3,5 @@ customtkinter
 pillow
 pynput
 requests
+pyinstaller
+auto-py-to-exe

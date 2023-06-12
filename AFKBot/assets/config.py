@@ -2,7 +2,7 @@ import pyautogui
 import secrets
 
 def press_keys(self):
-    self.SLEEP_TIME = 2
+    self.SLEEP_TIME = 3
     options = {
         "keys": ['a','s','d','w',' '],
         "buttons": ['left'],

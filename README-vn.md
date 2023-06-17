@@ -56,8 +56,6 @@ Trong khi cập nhật, trình cập nhật có thể bị đơ (tùy vào mạn
 
 Bạn có thể thay đổi nhưng điều chỉnh sau: ```"keys": ['a','s','d','w',' ']``` , ```"buttons": ['left']``` và ```self.SLEEP_TIME = 2```
 # Preview
-
-https://github.com/gorouflex/afkbot/assets/98001973/cfb634fc-68ee-4e70-9c22-27467728489e
         
 <p align="center">
 <h1 align="center">Giao diện chính và Trình cập nhật</h1>

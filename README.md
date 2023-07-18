@@ -13,6 +13,13 @@
  <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/gorouflex/afkbot?style=for-the-badge">
 <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/gorouflex/afkbot/total?style=for-the-badge">
 <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/gorouflex/afkbot?style=for-the-badge">
+<h1>
+  <p align="center">
+    <a href="https://github.com/gorouflex/afkbot"><img src="https://img.shields.io/badge/AFKBot-for_Windows-blue?style=for-the-badge"/>
+    <a href="https://github.com/gorouflex/afkbot4mac"><img src="https://img.shields.io/badge/AFKBot-for_Mac-green?style=for-the-badge"/>
+    <a href="https://github.com/gorouflex/afkbotlegacy"><img src="https://img.shields.io/badge/AFKBot Legacy for Windows-gray?style=for-the-badge"/>
+</h1>
+  
   <p align="center">
   <a href="#features">Features</a>
   •

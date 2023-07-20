@@ -30,10 +30,9 @@
 
 - Simple GUI 
 
+# Caution
+**Both `AFKBot` and `Updater` is based on a library (`urllib3`) that require a internet connection ,so for the proper functionality please make sure that you have connected to a fine Internet (Slowed Internet may cause some problem)**
 # Installation
-
-
-
 ### For Py/Source version
 
 1. Please download [requirements.txt](https://github.com/gorouflex/afkbot/files/12103798/requirements.txt) then run 

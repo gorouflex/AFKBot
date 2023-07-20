@@ -28,7 +28,7 @@
 
 - Do some game action key (A,W,S,D and space)
 
-- Simple GUI with random window title
+- Simple GUI 
 
 # Installation
 

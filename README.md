@@ -1,25 +1,16 @@
-<h1 align="center">
-  AFKBot - Project M
-  <br>
-
- </h1>
+<h1 align="center">AFKBot</h1>
 
 <h4 align="center">A bot that prevent you AFK in some games</h4>
-
+<h4 align="center">Support Windows and macOS</h4>
 <h4 align="center">Open-source project write by Python</h4>
 
 <p align="center">
 <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/gorouflex/afkbot?style=for-the-badge">
 <img alt="GitHub all releases" src="https://img.shields.io/github/downloads/gorouflex/afkbot/total?style=for-the-badge">
 <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/gorouflex/afkbot?style=for-the-badge">
-<h1>
-  <p align="center">
-    <a href="https://github.com/gorouflex/afkbot"><img src="https://img.shields.io/badge/AFKBot-for_Windows-blue?style=for-the-badge"/>
-    <a href="https://github.com/gorouflex/afkbot4mac"><img src="https://img.shields.io/badge/AFKBot-for_Mac-green?style=for-the-badge"/>
-    <a href="https://github.com/gorouflex/afkbotlegacy"><img src="https://img.shields.io/badge/AFKBot Legacy for Windows-gray?style=for-the-badge"/>
-</h1>
+
   
-  <p align="center">
+<p align="center">
   <a href="#features">Features</a>
   •
   <a href="#installation">Installation</a>
@@ -40,8 +31,6 @@
 </div>
 </h1>
 
-### Other project: [AFKBot Legacy](https://github.com/gorouflex/afkbotlegacy)
-
 # Features
 
 - Random clicks
@@ -52,18 +41,21 @@
 
 # Installation
 
+
+
 ### For Py/Source version
-- Please download [requirements.txt](https://github.com/gorouflex/afkbot/files/11712913/requirements.txt) and run 
+
+- Please download [requirements.txt](https://github.com/gorouflex/afkbot/files/12103798/requirements.txt) and run 
 ```
 pip install -r requirements.txt 
 ```
 
 ### For Portable version 
-- Just simply run .exe file
+- Just simply run .exe or .app file
 
 # Updater 
 ### How to use?
-1.Download **UpdaterV2.1.exe** from [Official Releases](https://github.com/gorouflex/afkbot/releases)
+1.Download latest Updater from [Official Releases](https://github.com/gorouflex/afkbot/releases)
 
 2.Paste to the same folder where AFKBot is (example: C:\AFKBot\AFKBot.exe)
 
@@ -77,9 +69,15 @@ Before update please close AFKBot and backup your config file if need!
 While download and update the updater might stop respond but still working, please wait until it says **Update successfully!**
 
 # Config
+## Windows
+
 **config.py** in assets folder
 
-You should change ```"keys": ['a','s','d','w',' ']``` , ```"buttons": ['left']``` and ```self.SLEEP_TIME = 2```
+## macOS
+
+Right click to 'AFKBot.app' -> Show Package Contents -> Contents -> Resources -> config.py
+
+
 # Preview
         
 <p align="center">

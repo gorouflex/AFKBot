@@ -1,6 +1,6 @@
 <h1 align="center">AFKBot</h1>
 
-<h4 align="center">A bot that prevent you AFK in some games</h4>
+<h4 align="center">A (Simple) bot that can prevent you from AFK during the match</h4>
 <h4 align="center">Support Windows and macOS</h4>
 <h4 align="center">Open-source project write by Python</h4>
 
@@ -21,15 +21,6 @@
   •
   <a href="#preview">Preview</a>       
 </p>
-
-<div>
-<p align="center">
-  <a href="https://github.com/gorouflex/afkbot/blob/main/README.md">English</a>
-  •
-  <a href="https://github.com/gorouflex/afkbot/blob/main/README-vn.md">Tiếng Việt</a>
-</p>
-</div>
-</h1>
 
 # Features
 

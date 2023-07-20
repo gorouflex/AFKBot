@@ -40,6 +40,11 @@
 ```
 pip install -r [requirements.txt path]
 ```
+or
+```
+python3 -m pip install -r [requirements.txt path]
+```
+
 2. Run .py file and enjoy
 
 # Updater 
@@ -68,21 +73,12 @@ Right click to 'AFKBot.app' -> Show Package Contents -> Contents -> Resources ->
 
 
 # Preview
-        
-<p align="center">
-<h1 align="center">GUI and Updater</h1>
-</p>
-
+      
+<h1 align="center">Main GUI and Updater</h1>
 <p align="center">          
-  <img src="https://github.com/gorouflex/afkbot/assets/98001973/767745d9-df5c-4bb0-926a-8aac8f40b918">
-  <img src="https://github.com/gorouflex/afkbot/assets/98001973/c7831c29-41ce-4702-ba2c-4cc25d9830d6">
-  <img src="https://github.com/gorouflex/afkbot/assets/98001973/6078d0f7-f74b-4afb-8203-358595411fd7">
+  <img src="https://github.com/gorouflex/afkbot/assets/98001973/a2335d49-032e-4e38-bb71-49c24783ac62">
+  <img src="https://github.com/gorouflex/afkbot/assets/98001973/f274451b-3790-4dee-9a69-65ef77f5f3b0">
 </p>
-
-<p align="center">
-<h1 align="center"> </h1>
-</p>
-           
 
 # Special thanks to:
 

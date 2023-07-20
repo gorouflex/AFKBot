@@ -36,26 +36,24 @@
 
 ### For Py/Source version
 
-- Please download [requirements.txt](https://github.com/gorouflex/afkbot/files/12103798/requirements.txt) and run 
+1. Please download [requirements.txt](https://github.com/gorouflex/afkbot/files/12103798/requirements.txt) then run 
 ```
-pip install -r requirements.txt 
+pip install -r [requirements.txt path]
 ```
-
-### For Portable version 
-- Just simply run .exe or .app file
+2. Run .py file and enjoy
 
 # Updater 
 ### How to use?
 1.Download latest Updater from [Official Releases](https://github.com/gorouflex/afkbot/releases)
 
-2.Paste to the same folder where AFKBot is (example: C:\AFKBot\AFKBot.exe)
+2.Paste to the same folder where AFKBot is (example: C:\AFKBot\AFKBot.py)
 
 3.Run and click Update button
 
 Tutorial video later
 
 ### Cautions
-Before update please close AFKBot and backup your config file if need!
+**Before update please close AFKBot and backup your config file if need!**
 
 While download and update the updater might stop respond but still working, please wait until it says **Update successfully!**
 

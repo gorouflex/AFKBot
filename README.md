@@ -62,14 +62,8 @@ Tutorial video later
 While download and update the updater might stop respond but still working, please wait until it says **Update successfully!**
 
 # Config
-## Windows
 
 **config.py** in assets folder
-
-## macOS
-
-Right click to 'AFKBot.app' -> Show Package Contents -> Contents -> Resources -> config.py
-
 
 # Preview
       

@@ -22,7 +22,7 @@
   <a href="#preview">Preview</a>       
 </p>
 
-# Features
+# Feature
 
 - Random clicks
 

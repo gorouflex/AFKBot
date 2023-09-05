@@ -1,4 +1,4 @@
-# Version 4.0.1
+# Version 4.1 (Stable)
 import sys
 import webbrowser
 import customtkinter
@@ -6,6 +6,8 @@ import urllib3
 import random
 import threading
 from assets.config import KeyPresser
+import tkinter as tk
+from tkinter import messagebox
 
 def get_latest_version():
     latest_version = urllib3.request(url="https://github.com/gorouflex/afkbot/releases/latest", method="GET")
@@ -52,8 +54,6 @@ class InfoWindow(customtkinter.CTk):
                                                     font=("", 14))
         self.version_label.pack(pady=5)
 
-
-# Main app
 class MainWindow(customtkinter.CTk):
     def __init__(self):
         super().__init__()
@@ -81,8 +81,28 @@ class MainWindow(customtkinter.CTk):
                                              corner_radius=5, command=self.buttons[i][1])
             button.pack(pady=5)
 
-        self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.0.1 (Stable)", font=("", 14))
+        self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.1.0 (Stable)", font=("", 14))
         self.version_label.pack(pady=5)
+
+        self.check_for_updates()
+
+    def check_for_updates(self):
+        local_version = "4.1.0"
+        latest_version = get_latest_version()
+        
+        if local_version < latest_version:
+            self.withdraw()
+            result = messagebox.askquestion(
+                "Update Available",
+                "A new update has been found! Please use the Updater to install the latest version.\nOtherwise, the app will exit.\nDo you want to visit the GitHub page for more details?",
+                icon="warning"
+            )
+            self.deiconify()
+            if result == "yes":
+                webbrowser.open("https://github.com/gorouflex/afkbot/releases/latest")
+            self.destroy()
+        else:
+            pass
 
     def start(self):
         self.key_presser.is_running = True

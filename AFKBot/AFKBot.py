@@ -1,4 +1,4 @@
-# Version 4.0
+# Version 4.0.1
 import sys
 import webbrowser
 import customtkinter
@@ -39,7 +39,7 @@ class InfoWindow(customtkinter.CTk):
 
         self.buttons = [
             ["Open Github", open_github],
-            ["Changelog", open_releases],
+            ["Change log", open_releases],
         ]
 
         for i in range(2):
@@ -48,7 +48,7 @@ class InfoWindow(customtkinter.CTk):
             button.pack(pady=5)
 
         self.version_label = customtkinter.CTkLabel(self, width=200,
-                                                    text=f"Latest version on github: {get_latest_version()}",
+                                                    text=f"Latest version on Github: {get_latest_version()}",
                                                     font=("", 14))
         self.version_label.pack(pady=5)
 
@@ -57,9 +57,9 @@ class InfoWindow(customtkinter.CTk):
 class MainWindow(customtkinter.CTk):
     def __init__(self):
         super().__init__()
-        self.title('AFKBot')
+        self.title('')
         self.title = "AFKBot"
-        self.geometry("250x230")
+        self.geometry("250x250")
         self.resizable(False, False)
         
         self.key_presser = KeyPresser()
@@ -77,11 +77,11 @@ class MainWindow(customtkinter.CTk):
         ]
         
         for i in range(3):
-            button = customtkinter.CTkButton(self, width=150, height=40, text=self.buttons[i][0], font=("", 16),
+            button = customtkinter.CTkButton(self, width=160, height=40, text=self.buttons[i][0], font=("", 16),
                                              corner_radius=5, command=self.buttons[i][1])
             button.pack(pady=5)
 
-        self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.0.0", font=("", 14))
+        self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.0.1 (Stable)", font=("", 14))
         self.version_label.pack(pady=5)
 
     def start(self):

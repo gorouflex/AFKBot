@@ -11,7 +11,7 @@
 
   
 <p align="center">
-  <a href="#features">Features</a>
+  <a href="#feature">Feature</a>
   •
   <a href="#installation">Installation</a>
   •

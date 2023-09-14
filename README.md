@@ -28,7 +28,7 @@
 
 - Do some game action key (A,W,S,D and space)
 
-- Simple GUI 
+- Simple GUI with CFU when starting
 
 # Caution
 **Both `AFKBot` and `Updater` is based on a library (`urllib3`) that require a internet connection ,so for the proper functionality please make sure that you have connected to a fine Internet (Slowed Internet may cause some problem)**
@@ -75,6 +75,6 @@ While download and update the updater might stop respond but still working, plea
 
 # Special thanks to:
 
-### @NotchApple1703 : For GUI source code
+### @NotchApple1703 : For GUI source code and optimize
 
 # ⚠️Warning⚠️: This is for education purposes only, I am not responsible if you were ban in game!

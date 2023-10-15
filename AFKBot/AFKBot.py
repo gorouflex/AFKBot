@@ -1,4 +1,4 @@
-# Version 4.1 (Stable)
+# Version 4.2.0 (Stable)
 import sys
 import webbrowser
 import customtkinter
@@ -81,13 +81,13 @@ class MainWindow(customtkinter.CTk):
                                              corner_radius=5, command=self.buttons[i][1])
             button.pack(pady=5)
 
-        self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.1.0 (Stable)", font=("", 14))
+        self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.2.0 (Stable)", font=("", 14))
         self.version_label.pack(pady=5)
 
         self.check_for_updates()
 
     def check_for_updates(self):
-        local_version = "4.1.0"
+        local_version = "4.2.0"
         latest_version = get_latest_version()
         
         if local_version < latest_version:

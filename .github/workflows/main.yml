@@ -1,0 +1,53 @@
+name: CL
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        fetch-depth: 0
+    - name: Set release tag and title
+      id: set_release_tag_title
+      run: |
+        release_tag="0.1.6-PreAlpha"
+        release_title="0.1.6 Pre-Alpha"
+        echo "::set-output name=release_tag::$release_tag"
+        echo "::set-output name=release_title::$release_title"
+      shell: bash
+
+    - name: Zip folder
+      run: |
+        sudo apt-get install -y zip
+        zip -r AFKBot.zip AFKBot
+      working-directory: ${{ github.workspace }}
+
+    - name: Set up Git
+      run: |
+        git config --global user.email "github-actions@github.com"
+        git config --global user.name "GitHub Actions"
+
+    - name: Update release
+      run: |
+        release_tag="4.2.0-AlPreview"
+        release_title="4.2.0 Alpha Preview"
+
+        commit_history=$(git log -5 --graph --oneline)
+
+        if gh release view "$release_tag" &>/dev/null; then
+          gh release delete "$release_tag" --yes
+        fi
+
+        gh release create "$release_tag" ./AFKBot.zip --title "$release_title" --prerelease --notes "### Pre-Alpha version is not recommended for use, only for testing!
+        ### The latest commits are:  
+        $commit_history"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

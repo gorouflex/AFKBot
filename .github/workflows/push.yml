@@ -31,7 +31,7 @@ jobs:
     - name: Zip folder
       run: |
         sudo apt-get install -y zip
-        zip -r ODB.zip ODB
+        zip -r AFKBot.zip AFKBot
       working-directory: ${{ github.workspace }}
 
     - name: Set up Git

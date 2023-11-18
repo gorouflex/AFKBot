@@ -96,6 +96,11 @@ jobs:
     - name: Download all workflow run artifacts
       uses: actions/download-artifact@v2
 
+    - name: Move artifacts to current directory
+      run: |
+        mv windows-artifacts/* .
+        mv macos-artifacts/* .
+
     - name: Set release tag and title
       id: set_release_tag_title
       run: |

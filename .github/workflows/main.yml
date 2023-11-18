@@ -6,15 +6,89 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-windows:
+    runs-on: windows-latest
 
     steps:
     - name: Check out code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.sha }}
         fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+
+    - name: Compile AFKBot.py to exe
+      run: |
+        pyinstaller --onefile --windowed AFKBot-Beta/AFKBot.py
+        mv dist/AFKBot ./AFKBot.exe
+
+    - name: Compile UpdaterV4.0.1.py to exe
+      run: |
+        pyinstaller --onefile --windowed AFKBot-Beta/UpdaterV4.0.1.py
+        mv dist/UpdaterV4.0.1 ./UpdaterV4.0.1.exe
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: windows-artifacts
+        path: |
+          ./AFKBot.exe
+          ./UpdaterV4.0.1.exe
+
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pyinstaller
+
+    - name: Compile AFKBot.py to app
+      run: |
+        pyinstaller --onefile --windowed AFKBot-Beta/AFKBot.py
+        mv dist/AFKBot ./AFKBot.app
+
+    - name: Compile UpdaterV4.0.1.py to app
+      run: |
+        pyinstaller --onefile --windowed AFKBot-Beta/UpdaterV4.0.1.py
+        mv dist/UpdaterV4.0.1 ./UpdaterV4.0.1.app
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: macos-artifacts
+        path: |
+          ./AFKBot.app
+          ./UpdaterV4.0.1.app
+
+  release:
+    needs: [build-windows, build-macos]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download all workflow run artifacts
+      uses: actions/download-artifact@v2
 
     - name: Set release tag and title
       id: set_release_tag_title

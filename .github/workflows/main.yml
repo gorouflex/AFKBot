@@ -34,7 +34,7 @@ jobs:
     - name: Compile UpdaterV4.0.1.py to exe
       run: |
         pyinstaller --onefile --windowed AFKBot-Beta/UpdaterV4.0.1.py
-        mv dist/UpdaterV4.0.1 ./UpdaterV4.0.1.exe
+        mv dist/UpdaterV4.0.1.exe ./UpdaterV4.0.1.exe
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v2

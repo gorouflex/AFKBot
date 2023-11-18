@@ -87,6 +87,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Check out code
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        fetch-depth: 0
+
     - name: Download all workflow run artifacts
       uses: actions/download-artifact@v2
 

@@ -50,6 +50,6 @@ jobs:
           gh release delete "$release_tag" --yes
         fi
 
-        gh release create "$release_tag" ./ODB.zip --title "$release_title" --notes "$changelog"
+        gh release create "$release_tag" ./AFKBot.zip --title "$release_title" --notes "$changelog"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

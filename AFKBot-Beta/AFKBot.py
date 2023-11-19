@@ -133,7 +133,8 @@ class MainWindow(customtkinter.CTk):
             self.focused_widget_before_widthdraw = self.focus_get()
 
 if __name__ == '__main__':
-    key_presser = KeyPresser()     parser = argparse.ArgumentParser()
+    key_presser = KeyPresser()
+    parser = argparse.ArgumentParser()
     parser.add_argument('--cli', action='store_true', help='Run in CLI mode')
     args = parser.parse_args()
 

@@ -7,7 +7,6 @@ import threading
 from assets.config import KeyPresser
 import tkinter as tk
 from tkinter import messagebox
-import argparse
 
 def get_latest_version():
     latest_version = urllib3.request(url="https://github.com/gorouflex/afkbot/releases/latest", method="GET")
@@ -28,38 +27,37 @@ def check_for_updates():
     latest_version = get_latest_version()
 
     if local_version < latest_version:
-        tk.Tk().withdraw()
         result = messagebox.askquestion(
-                 "Update Available",
-                 "A new update has been found! Please use the Updater to install the latest version.\nOtherwise, the app will exit.\nDo you want to visit the GitHub page for more details?",
-                  icon="warning"
+            "Update Available",
+            "A new update has been found! Please use the Updater to install the latest version.\nOtherwise, the app will exit.\nDo you want to visit the GitHub page for more details?",
+            icon="warning"
         )
         if result == "yes":
             webbrowser.open("https://github.com/gorouflex/afkbot/releases/latest")
-        return True
+        sys.exit()
     elif local_version > latest_version:
-        tk.Tk().withdraw()
         result = messagebox.askquestion(
-                  "AFKBot Beta Program",
-                  "Welcome to AFKBot Beta Program.\nThis build may not be as stable as expected.\nOnly for testing purposes!",
-                  icon="warning"
+            "AFKBot Beta Program",
+            "Welcome to AFKBot Beta Program.\nThis build may not be as stable as expected.\nOnly for testing purposes!",
+            icon="warning"
         )
         if result == "no":
-            return True
-    return False
+            sys.exit()
+        else:
+            pass
+    else:
+        pass
+
+key_presser = KeyPresser()
 
 def start():
     key_presser.is_running = True
     thread = threading.Thread(target=key_presser.press_keys)
     thread.start()
 
+
 def stop():
     key_presser.is_running = False
-
-def _windows_set_titlebar_color(appearance_mode):
-    focused_widget_before_widthdraw = None
-    if not focused_widget_before_widthdraw and tk._default_root and tk._default_root.winfo_exists():
-        focused_widget_before_widthdraw = tk._default_root.focus_get()
 
 class InfoWindow(customtkinter.CTk):
     def __init__(self):
@@ -67,7 +65,7 @@ class InfoWindow(customtkinter.CTk):
         self.title('About')
         self.geometry("250x250")
         self.resizable(False, False)
-
+        
         self.logo_label = customtkinter.CTkLabel(self, text="About AFKBot Beta", font=("", 19, "bold"))
         self.logo_label.pack(pady=5)
 
@@ -94,12 +92,11 @@ class InfoWindow(customtkinter.CTk):
 
 class MainWindow(customtkinter.CTk):
     def __init__(self):
-        self.is_destroyed = False
         super().__init__()
         self.title('AFKBot')
         self.geometry("250x250")
         self.resizable(False, False)
-
+        
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
 
@@ -111,7 +108,7 @@ class MainWindow(customtkinter.CTk):
             ["Stop", stop],
             ["About", info_window],
         ]
-
+        
         for i in range(3):
             button = customtkinter.CTkButton(self, width=160, height=40, text=self.buttons[i][0], font=("", 16),
                                              corner_radius=5, command=self.buttons[i][1])
@@ -120,26 +117,15 @@ class MainWindow(customtkinter.CTk):
         self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.2.0 (Beta)", font=("", 14))
         self.version_label.pack(pady=5)
 
-        self.check_for_updates()
 
-    def check_for_updates(self):
-        if check_for_updates():
-            self.destroy()
-            self.is_destroyed = True
-            return
-
-    def _windows_set_titlebar_color(self, appearance_mode):
-        if not self.is_destroyed and self.winfo_exists():
-            self.focused_widget_before_widthdraw = self.focus_get()
+def run_cli_mode():
+    print("Welcome to AFKBot CLI Mode")
+    print("Still in early stages!")
 
 if __name__ == '__main__':
-    key_presser = KeyPresser()
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--cli', action='store_true', help='Run in CLI mode')
-    args = parser.parse_args()
-
-    if args.cli:
+    if "--cli" in sys.argv:
         run_cli_mode()
     else:
+        check_for_updates()
         app = MainWindow()
         app.mainloop()

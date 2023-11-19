@@ -30,7 +30,7 @@ class InfoWindow(customtkinter.CTk):
         self.geometry("250x250")
         self.resizable(False, False)
         
-        self.logo_label = customtkinter.CTkLabel(self, text="About AFKBot", font=("", 19, "bold"))
+        self.logo_label = customtkinter.CTkLabel(self, text="About AFKBot Beta", font=("", 19, "bold"))
         self.logo_label.pack(pady=5)
 
         self.owner_label = customtkinter.CTkLabel(self, text="Main developer: GorouFlex", font=("", 15))
@@ -56,13 +56,11 @@ class InfoWindow(customtkinter.CTk):
 
 class MainWindow(customtkinter.CTk):
     def __init__(self):
+        self.is_destroyed = False
         super().__init__()
-        self.title('')
-        self.title = "AFKBot"
+        self.title('AFKBot')
         self.geometry("250x250")
         self.resizable(False, False)
-        
-        self.key_presser = KeyPresser()
         
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
@@ -81,7 +79,7 @@ class MainWindow(customtkinter.CTk):
                                              corner_radius=5, command=self.buttons[i][1])
             button.pack(pady=5)
 
-        self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.2.0 (Stable)", font=("", 14))
+        self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.2.0 (Beta)", font=("", 14))
         self.version_label.pack(pady=5)
 
         self.check_for_updates()
@@ -89,21 +87,41 @@ class MainWindow(customtkinter.CTk):
     def check_for_updates(self):
         local_version = "4.2.0"
         latest_version = get_latest_version()
-        
+
         if local_version < latest_version:
             self.withdraw()
             result = messagebox.askquestion(
-                "Update Available",
-                "A new update has been found! Please use the Updater to install the latest version.\nOtherwise, the app will exit.\nDo you want to visit the GitHub page for more details?",
-                icon="warning"
+                     "Update Available",
+                     "A new update has been found! Please use the Updater to install the latest version.\nOtherwise, the app will exit.\nDo you want to visit the GitHub page for more details?",
+                      icon="warning"
             )
             self.deiconify()
             if result == "yes":
-                webbrowser.open("https://github.com/gorouflex/afkbot/releases/latest")
+               webbrowser.open("https://github.com/gorouflex/afkbot/releases/latest")
             self.destroy()
+            self.is_destroyed = True
+            return
+        elif local_version > latest_version:
+             self.withdraw()
+             result = messagebox.askquestion(
+                      "AFKBot Beta Program",
+                      "Welcome to AFKBot Beta Program.\nThis build may not stable as expected.\nOnly for testing purposes!",
+                      icon="warning"
+             )
+             self.deiconify()
+             if result == "no":
+                self.destroy()
+                self.is_destroyed = True
+                return
+             else:
+                pass
         else:
-            pass
+          pass
 
+    def _windows_set_titlebar_color(self, appearance_mode):
+        if not self.is_destroyed and self.winfo_exists():
+            self.focused_widget_before_widthdraw = self.focus_get()
+            
     def start(self):
         self.key_presser.is_running = True
         thread = threading.Thread(target=self.key_presser.press_keys)

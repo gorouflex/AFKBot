@@ -43,10 +43,6 @@ def check_for_updates():
         )
         if result == "no":
             sys.exit()
-        else:
-            pass
-    else:
-        pass
 
 key_presser = KeyPresser()
 
@@ -96,7 +92,7 @@ class MainWindow(customtkinter.CTk):
         self.title('AFKBot')
         self.geometry("250x250")
         self.resizable(False, False)
-        
+
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
 
@@ -108,13 +104,15 @@ class MainWindow(customtkinter.CTk):
             ["Stop", stop],
             ["About", info_window],
         ]
-        
+
         for i in range(3):
             button = customtkinter.CTkButton(self, width=160, height=40, text=self.buttons[i][0], font=("", 16),
                                              corner_radius=5, command=self.buttons[i][1])
             button.pack(pady=5)
 
-        self.version_label = customtkinter.CTkLabel(self, width=215, text=f"Version 4.2.0 (Stable)", font=("", 14))
+        self.version_label = customtkinter.CTkLabel(
+            self, width=215, text="Version 4.2.0 (Stable)", font=("", 14)
+        )
         self.version_label.pack(pady=5)
 
 

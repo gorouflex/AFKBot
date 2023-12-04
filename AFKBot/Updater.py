@@ -9,8 +9,7 @@ DOWNLOAD_URL = "https://github.com/gorouflex/afkbot/releases/latest/download/AFK
 def get_latest_version():
     http = urllib3.PoolManager()
     response = http.request('GET', LATEST_RELEASE_URL)
-    latest_version = response.geturl().split("/")[-1]
-    return latest_version
+    return response.geturl().split("/")[-1]
 
 def download_and_extract(url, filename):
     http = urllib3.PoolManager()

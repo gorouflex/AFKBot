@@ -23,7 +23,7 @@ def info_window():
     InfoWindow().mainloop()
 
 def check_for_updates():
-    local_version = "4.2.0"
+    local_version = "4.2.1"
     latest_version = get_latest_version()
 
     if local_version < latest_version:
@@ -111,7 +111,7 @@ class MainWindow(customtkinter.CTk):
             button.pack(pady=5)
 
         self.version_label = customtkinter.CTkLabel(
-            self, width=215, text="Version 4.2.0 (Stable)", font=("", 14)
+            self, width=215, text="Version 4.2.1 (Stable)", font=("", 14)
         )
         self.version_label.pack(pady=5)
 

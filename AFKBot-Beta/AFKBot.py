@@ -1,10 +1,15 @@
 import sys
+import os
 import webbrowser
 import customtkinter
 import urllib3
 import random
+import configparser
+from configparser import ConfigParser
+import secrets
 import threading
-from assets.config import KeyPresser
+import pyautogui
+import time
 import tkinter as tk
 from tkinter import messagebox
 
@@ -44,16 +49,49 @@ def check_for_updates():
         if result == "no":
             sys.exit()
 
-key_presser = KeyPresser()
+is_running = False
 
 def start():
-    key_presser.is_running = True
-    thread = threading.Thread(target=key_presser.press_keys)
-    thread.start()
-
+    global is_running
+    if not is_running:
+        is_running = True
+        threading.Thread(target=press_keys).start()
 
 def stop():
-    key_presser.is_running = False
+    global is_running
+    is_running = False
+
+def settings():
+    settings_window = SettingsWindow()
+    settings_window.mainloop()
+
+KEYS = ['a', 's', 'd', 'w', ' ']
+SLEEP_TIME = 3
+
+def press_keys():
+    global is_running
+    
+    options = {
+        "keys": ['a', 's', 'd', 'w', ' '],
+        "buttons": ['left'],
+        "sleep_time": SLEEP_TIME
+    }
+
+    def get_random_option(options_list):
+        return secrets.choice(options_list)
+
+    def press_key(actions):
+        pyautogui.press(actions)
+
+    def click_button(click):
+        pyautogui.click(button=click)
+
+    while is_running:
+        key = get_random_option(options["keys"])
+        button = get_random_option(options["buttons"])
+        press_key(key)
+        click_button(button)
+        time.sleep(options["sleep_time"])
 
 class InfoWindow(customtkinter.CTk):
     def __init__(self):
@@ -86,11 +124,62 @@ class InfoWindow(customtkinter.CTk):
                                                     font=("", 14))
         self.version_label.pack(pady=5)
 
+class SettingsWindow(customtkinter.CTk):
+    config_folder: str = 'Config'
+    config_path: str = f'{config_folder}/config.txt'
+
+    def __init__(self):
+        super().__init__()
+        self.title('Settings')
+        self.geometry("250x250")
+        self.resizable(False, False)
+        
+        self.logo_label = customtkinter.CTkLabel(self, text="Settings", font=("", 19, "bold"))
+        self.logo_label.pack(pady=5)
+        
+        self.sleep_entry = customtkinter.CTkEntry(self, placeholder_text="Sleep")
+        self.sleep_entry.pack(pady=5)
+        
+        self.keys_entry = customtkinter.CTkEntry(self, placeholder_text="Keys")
+        self.keys_entry.pack(pady=5)
+        
+        self.save_button = customtkinter.CTkButton(self, text="Save", command=self.create_config)
+        self.save_button.pack(pady=5)
+
+        self.check_config_integrity()
+
+    def create_config(self):
+        sleep = self.sleep_entry.get()
+        keys = self.keys_entry.get()
+
+        cfg: ConfigParser = ConfigParser()
+        cfg.add_section('User')
+        cfg.set('User', 'Sleep', sleep)
+        cfg.set('User', 'keys', keys)
+        
+        with open(self.config_path, 'w', encoding='utf-8') as configfile:
+            configfile.truncate(0)
+            configfile.seek(0)
+            cfg.write(configfile)
+
+    def check_config_integrity(self):
+        conf: ConfigParser = ConfigParser()
+        if not os.path.exists(self.config_folder):
+            os.mkdir(self.config_folder)
+        if not os.path.isfile(self.config_path) or os.stat(self.config_path).st_size == 0:
+            self.create_config()
+            return
+        conf.read(self.config_path)
+        if (not conf.has_section('User') or not conf.has_section('Settings')
+                or not conf.has_section('Url')):
+            self.create_config()
+
+        
 class MainWindow(customtkinter.CTk):
     def __init__(self):
         super().__init__()
         self.title('AFKBot')
-        self.geometry("250x250")
+        self.geometry("250x300")
         self.resizable(False, False)
 
         self.columnconfigure(0, weight=1)
@@ -102,10 +191,11 @@ class MainWindow(customtkinter.CTk):
         self.buttons = [
             ["Start", start],
             ["Stop", stop],
+            ["Settings", settings],
             ["About", info_window],
         ]
 
-        for i in range(3):
+        for i in range(4):
             button = customtkinter.CTkButton(self, width=160, height=40, text=self.buttons[i][0], font=("", 16),
                                              corner_radius=5, command=self.buttons[i][1])
             button.pack(pady=5)
@@ -115,15 +205,7 @@ class MainWindow(customtkinter.CTk):
         )
         self.version_label.pack(pady=5)
 
-
-def run_cli_mode():
-    print("Welcome to AFKBot CLI Mode")
-    print("Still in early stages!")
-
 if __name__ == '__main__':
-    if "--cli" in sys.argv:
-        run_cli_mode()
-    else:
-        check_for_updates()
-        app = MainWindow()
-        app.mainloop()
+    check_for_updates()
+    app = MainWindow()
+    app.mainloop()

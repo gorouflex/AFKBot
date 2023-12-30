@@ -3,7 +3,6 @@ import os
 import webbrowser
 import customtkinter
 import urllib3
-import random
 import configparser
 from configparser import ConfigParser
 import secrets
@@ -65,16 +64,86 @@ def settings():
     settings_window = SettingsWindow()
     settings_window.mainloop()
 
-KEYS = ['a', 's', 'd', 'w', ' ']
-SLEEP_TIME = 3
+
+class SettingsWindow(customtkinter.CTk):
+    config_folder: str = 'Config'
+    config_path: str = f'{config_folder}/config.txt'
+
+    def __init__(self):
+        super().__init__()
+        self.title('Settings')
+        self.geometry("500x225")
+        self.resizable(False, False)
+
+        self.logo_label = customtkinter.CTkLabel(self, text="Settings", font=("", 19, "bold"))
+        self.logo_label.pack(pady=5)
+
+        self.sleep_entry = customtkinter.CTkEntry(self, placeholder_text=f"sleep", font=("", 15))
+        self.sleep_entry.pack(pady=5)
+
+        self.keys_entry = customtkinter.CTkEntry(self, placeholder_text=f"keys", font=("", 15))
+        self.keys_entry.pack(pady=5)
+
+        self.config_label = customtkinter.CTkLabel(
+            self, width=215, text=f"Config folder: {os.getcwd()}", font=("", 14)
+        )
+        self.config_label.pack(pady=5)
+
+        self.save_button = customtkinter.CTkButton(self, text="Save", font=("", 15), command=self.create_config)
+        self.save_button.pack(pady=5)
+
+        self.load_config()
+
+    def create_config(self):
+        sleep = self.sleep_entry.get()
+        keys = self.keys_entry.get()
+
+        cfg: ConfigParser = ConfigParser()
+        cfg.add_section('User')
+        cfg.set('User', 'Sleep', sleep)
+        cfg.set('User', 'keys', keys)
+
+        with open(self.config_path, 'w', encoding='utf-8') as configfile:
+            configfile.truncate(0)
+            configfile.seek(0)
+            cfg.write(configfile)
+
+        self.config_label.configure(
+    text=f"Config folder: {os.getcwd()}")
+
+
+    def load_config(self):
+        conf: ConfigParser = ConfigParser()
+        if not os.path.exists(self.config_folder):
+            os.mkdir(self.config_folder)
+        if not os.path.isfile(self.config_path) or os.stat(self.config_path).st_size == 0:
+            self.create_config()
+            return
+        conf.read(self.config_path)
+        if not conf.has_section('User'):
+            self.create_config()
+            return
+
+        try:
+            keys = conf.get('User', 'keys')
+            sleep = conf.get('User', 'Sleep')
+            self.keys_entry.delete(0, 'end')
+            self.keys_entry.insert(0, keys)
+            self.sleep_entry.delete(0, 'end')
+            self.sleep_entry.insert(0, sleep)
+        except:
+            self.create_config()
 
 def press_keys():
     global is_running
     
+    conf: ConfigParser = ConfigParser()
+    conf.read(SettingsWindow.config_path)
+
     options = {
-        "keys": ['a', 's', 'd', 'w', ' '],
+        "keys": conf.get('User', 'keys', fallback=['a', 's', 'd', 'w', ' ']),
         "buttons": ['left'],
-        "sleep_time": SLEEP_TIME
+        "sleep_time": conf.getint('User', 'Sleep', fallback=3),
     }
 
     def get_random_option(options_list):
@@ -92,6 +161,7 @@ def press_keys():
         press_key(key)
         click_button(button)
         time.sleep(options["sleep_time"])
+
 
 class InfoWindow(customtkinter.CTk):
     def __init__(self):
@@ -124,57 +194,6 @@ class InfoWindow(customtkinter.CTk):
                                                     font=("", 14))
         self.version_label.pack(pady=5)
 
-class SettingsWindow(customtkinter.CTk):
-    config_folder: str = 'Config'
-    config_path: str = f'{config_folder}/config.txt'
-
-    def __init__(self):
-        super().__init__()
-        self.title('Settings')
-        self.geometry("250x250")
-        self.resizable(False, False)
-        
-        self.logo_label = customtkinter.CTkLabel(self, text="Settings", font=("", 19, "bold"))
-        self.logo_label.pack(pady=5)
-        
-        self.sleep_entry = customtkinter.CTkEntry(self, placeholder_text="Sleep")
-        self.sleep_entry.pack(pady=5)
-        
-        self.keys_entry = customtkinter.CTkEntry(self, placeholder_text="Keys")
-        self.keys_entry.pack(pady=5)
-        
-        self.save_button = customtkinter.CTkButton(self, text="Save", command=self.create_config)
-        self.save_button.pack(pady=5)
-
-        self.check_config_integrity()
-
-    def create_config(self):
-        sleep = self.sleep_entry.get()
-        keys = self.keys_entry.get()
-
-        cfg: ConfigParser = ConfigParser()
-        cfg.add_section('User')
-        cfg.set('User', 'Sleep', sleep)
-        cfg.set('User', 'keys', keys)
-        
-        with open(self.config_path, 'w', encoding='utf-8') as configfile:
-            configfile.truncate(0)
-            configfile.seek(0)
-            cfg.write(configfile)
-
-    def check_config_integrity(self):
-        conf: ConfigParser = ConfigParser()
-        if not os.path.exists(self.config_folder):
-            os.mkdir(self.config_folder)
-        if not os.path.isfile(self.config_path) or os.stat(self.config_path).st_size == 0:
-            self.create_config()
-            return
-        conf.read(self.config_path)
-        if (not conf.has_section('User') or not conf.has_section('Settings')
-                or not conf.has_section('Url')):
-            self.create_config()
-
-        
 class MainWindow(customtkinter.CTk):
     def __init__(self):
         super().__init__()

@@ -27,7 +27,7 @@ def info_window():
     InfoWindow().mainloop()
 
 def check_for_updates():
-    local_version = "4.3.0"
+    local_version = "4.4.0"
     latest_version = get_latest_version()
 
     if local_version < latest_version:

@@ -3,6 +3,7 @@ import os
 import webbrowser
 import customtkinter
 import urllib3
+from bs4 import BeautifulSoup
 import configparser
 from configparser import ConfigParser
 import secrets
@@ -12,11 +13,24 @@ import time
 import tkinter as tk
 from tkinter import messagebox
 
+is_running = False
+info_window_instance = None
+settings_window = None
+
+http = urllib3.PoolManager()
+
 def get_latest_version():
     latest_version = urllib3.request(url="https://github.com/gorouflex/afkbot/releases/latest", method="GET")
     latest_version = latest_version.geturl()
     return latest_version.split("/")[-1]
 
+def get_latest_beta_version():
+    response = http.request('GET', 'https://github.com/gorouflex/afkbot/releases')
+    soup = BeautifulSoup(response.data, 'html.parser')
+    beta_tags = soup.find_all('a', class_='Link--primary', href=lambda x: x and '/tag/' in x)
+    if beta_tags:
+        return beta_tags[0].text.strip()
+    
 def open_github():
     webbrowser.open("https://www.github.com/gorouflex/afkbot")
 
@@ -24,10 +38,14 @@ def open_releases():
     webbrowser.open(f"https://github.com/gorouflex/afkbot/releases/tag/{get_latest_version()}")
 
 def info_window():
-    InfoWindow().mainloop()
+    global info_window_instance
+    if info_window_instance is None or (hasattr(info_window_instance, 'winfo_exists') and not info_window_instance.winfo_exists()):
+        info_window_instance = InfoWindow(app)
+    else:
+        info_window_instance.lift()
 
 def check_for_updates():
-    local_version = "4.3.0"
+    local_version = "4.3.1"
     latest_version = get_latest_version()
 
     if local_version < latest_version:
@@ -48,8 +66,6 @@ def check_for_updates():
         if result == "no":
             sys.exit()
 
-is_running = False
-
 def start():
     global is_running
     if not is_running:
@@ -61,31 +77,40 @@ def stop():
     is_running = False
 
 def settings():
-    settings_window = SettingsWindow()
-    settings_window.mainloop()
-
+    global settings_window
+    if settings_window is None or (hasattr(settings_window, 'winfo_exists') and not settings_window.winfo_exists()):
+        settings_window = SettingsWindow(app)
+    else:
+        settings_window.lift()
 
 class SettingsWindow(customtkinter.CTk):
     config_folder: str = 'Config'
     config_path: str = f'{config_folder}/config.txt'
 
-    def __init__(self):
+    def __init__(self, main_window):
         super().__init__()
+        self.main_window = main_window
         self.title('Settings')
-        self.geometry("500x225")
+        self.geometry("520x290")
         self.resizable(False, False)
-
+        
         self.logo_label = customtkinter.CTkLabel(self, text="Settings", font=("", 19, "bold"))
         self.logo_label.pack(pady=5)
 
-        self.sleep_entry = customtkinter.CTkEntry(self, placeholder_text=f"sleep", font=("", 15))
-        self.sleep_entry.pack(pady=5)
+        self.keys_label = customtkinter.CTkLabel(self, text="Keys:", font=("", 14, "bold"))
+        self.keys_label.pack(pady=5)
 
-        self.keys_entry = customtkinter.CTkEntry(self, placeholder_text=f"keys", font=("", 15))
+        self.keys_entry = customtkinter.CTkEntry(self, placeholder_text=f"Keys", font=("", 15))
         self.keys_entry.pack(pady=5)
 
+        self.sleep_label = customtkinter.CTkLabel(self, text="Sleep time:", font=("", 14, "bold"))
+        self.sleep_label.pack(pady=5)
+
+        self.sleep_entry = customtkinter.CTkEntry(self, placeholder_text=f"Sleep time", font=("", 15))
+        self.sleep_entry.pack(pady=5)
+
         self.config_label = customtkinter.CTkLabel(
-            self, width=215, text=f"Config folder: {os.getcwd()}", font=("", 14)
+            self, width=215, text=f"Config folder: {os.getcwd()}/Config", font=("", 14)
         )
         self.config_label.pack(pady=5)
 
@@ -94,9 +119,16 @@ class SettingsWindow(customtkinter.CTk):
 
         self.load_config()
 
+    def destroy(self):
+        super().destroy()
+        self.main_window.settings_window_closed()
+        
     def create_config(self):
         sleep = self.sleep_entry.get()
         keys = self.keys_entry.get()
+
+        if not sleep:
+            sleep = '3'
 
         cfg: ConfigParser = ConfigParser()
         cfg.add_section('User')
@@ -108,25 +140,25 @@ class SettingsWindow(customtkinter.CTk):
             configfile.seek(0)
             cfg.write(configfile)
 
-        self.config_label.configure(
-    text=f"Config folder: {os.getcwd()}")
-
+        self.config_label.configure(text=f"Config folder: {os.getcwd()}/Config")
 
     def load_config(self):
-        conf: ConfigParser = ConfigParser()
+        cfg: ConfigParser = ConfigParser()
         if not os.path.exists(self.config_folder):
             os.mkdir(self.config_folder)
         if not os.path.isfile(self.config_path) or os.stat(self.config_path).st_size == 0:
             self.create_config()
             return
-        conf.read(self.config_path)
-        if not conf.has_section('User'):
+        cfg.read(self.config_path)
+        if not cfg.has_section('User'):
             self.create_config()
             return
 
         try:
-            keys = conf.get('User', 'keys')
-            sleep = conf.get('User', 'Sleep')
+            keys = cfg.get('User', 'keys', fallback='ASWD ')
+            sleep = cfg.get('User', 'Sleep', fallback='3')
+            if not keys.strip():
+               keys = 'ASWD '
             self.keys_entry.delete(0, 'end')
             self.keys_entry.insert(0, keys)
             self.sleep_entry.delete(0, 'end')
@@ -137,13 +169,13 @@ class SettingsWindow(customtkinter.CTk):
 def press_keys():
     global is_running
     
-    conf: ConfigParser = ConfigParser()
-    conf.read(SettingsWindow.config_path)
+    cfg: ConfigParser = ConfigParser()
+    cfg.read(SettingsWindow.config_path)
 
     options = {
-        "keys": conf.get('User', 'keys', fallback=['a', 's', 'd', 'w', ' ']),
+        "keys": cfg.get('User', 'keys', fallback='ASWD '),
         "buttons": ['left'],
-        "sleep_time": conf.getint('User', 'Sleep', fallback=3),
+        "sleep_time": cfg.getint('User', 'Sleep', fallback=3),
     }
 
     def get_random_option(options_list):
@@ -156,20 +188,21 @@ def press_keys():
         pyautogui.click(button=click)
 
     while is_running:
-        key = get_random_option(options["keys"])
+        keys = options["keys"].strip() if options["keys"] else 'ASWD '
+        key = get_random_option(keys)
         button = get_random_option(options["buttons"])
         press_key(key)
         click_button(button)
         time.sleep(options["sleep_time"])
 
-
 class InfoWindow(customtkinter.CTk):
-    def __init__(self):
+    def __init__(self, main_window):
         super().__init__()
+        self.main_window = main_window
         self.title('About')
-        self.geometry("250x250")
+        self.geometry("290x290")
         self.resizable(False, False)
-        
+
         self.logo_label = customtkinter.CTkLabel(self, text="About AFKBot", font=("", 19, "bold"))
         self.logo_label.pack(pady=5)
 
@@ -190,10 +223,18 @@ class InfoWindow(customtkinter.CTk):
             button.pack(pady=5)
 
         self.version_label = customtkinter.CTkLabel(self, width=200,
-                                                    text=f"Latest version on Github: {get_latest_version()}",
+                                                    text=f"Latest stable version on Github: {get_latest_version()}",
                                                     font=("", 14))
         self.version_label.pack(pady=5)
+        self.betaversion_label = customtkinter.CTkLabel(self, width=200,
+                                                    text=f"Latest beta version on Github: {get_latest_beta_version()}",
+                                                    font=("", 14))
+        self.betaversion_label.pack(pady=2)
 
+    def destroy(self):
+        super().destroy()
+        self.main_window.info_window_closed()
+        
 class MainWindow(customtkinter.CTk):
     def __init__(self):
         super().__init__()
@@ -224,6 +265,14 @@ class MainWindow(customtkinter.CTk):
         )
         self.version_label.pack(pady=5)
 
+    def settings_window_closed(self):
+        global settings_window
+        settings_window = None
+
+    def info_window_closed(self):
+        global info_window_instance
+        info_window_instance = None
+        
 if __name__ == '__main__':
     check_for_updates()
     app = MainWindow()

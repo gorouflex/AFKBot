@@ -63,7 +63,10 @@ While download and update the updater might stop respond but still working, plea
 
 # Config
 
-**config.py** in assets folder
+- The default config was `key = ASWD` and `sleep = 3`, you can change by editing config file (Config/config.txt) or editing through the Setting window
+- `key` means the key the bot will press (ex: ASWD -> random press A,S,W,D button) and the `,` can also be a key to be pressed so don't fill like this `A,S,W,D` instead fill like this `ASWD`
+
+
 
 # Preview
       

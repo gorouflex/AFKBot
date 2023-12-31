@@ -1,7 +1,19 @@
 # Change log
 
-## 4.3.0
+## 4.3.1
 
-- `4.3.0` brings to you a new way to change your settings , by editing file or editing through the new Settings window
-- Fix thread ( mutiple Starts )
+## AFKBot
 
+- `4.3.1` brings to you a new way to change your settings , by editing file or editing through the new Settings window
+- Fix thread ( too many Starts, too many Window)
+- When a exist window appear if the user press a button to call it, it will focused that called window instead doing nothing
+- Fix config method
+- Info window now support check Beta version
+
+## Updater
+
+- Updater now can download and check Beta versions
+- Improve download logic
+
+### This is the last version in 2023! Happy new year!
+## Preview

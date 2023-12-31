@@ -63,17 +63,16 @@ While download and update the updater might stop respond but still working, plea
 
 # Config
 
-- The default config was `key = ASWD` and `sleep = 3`, you can change by editing config file (Config/config.txt) or editing through the Setting window
-- `key` means the key the bot will press (ex: ASWD -> random press A,S,W,D button) and the `,` can also be a key to be pressed so don't fill like this `A,S,W,D` instead fill like this `ASWD`
+- The default config was `keys = ASWD` and `sleep = 3`, you can change by editing config file (Config/config.txt) or editing through the Setting window
+- `keys` means the key the bot will press (ex: ASWD -> random press A,S,W,D button) and the `,` can also be a key to be pressed so don't fill like this `A,S,W,D` instead fill like this `ASWD`
 
+![image](https://github.com/gorouflex/AFKBot/assets/98001973/8d1388a8-5187-4bf3-9500-eab343a22e61)
 
 
 # Preview
-      
-<h1 align="center">Main GUI and Updater</h1>
+  
 <p align="center">          
-  <img src="https://github.com/gorouflex/afkbot/assets/98001973/a2335d49-032e-4e38-bb71-49c24783ac62">
-  <img src="https://github.com/gorouflex/afkbot/assets/98001973/f274451b-3790-4dee-9a69-65ef77f5f3b0">
+  <img src="https://github.com/gorouflex/AFKBot/assets/98001973/f9a2a8fa-e2a0-41b2-81a7-566d6ebdb0cc">
 </p>
 
 # Special thanks to:

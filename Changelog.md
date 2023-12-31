@@ -16,4 +16,6 @@
 - Improve download logic
 
 ### This is the last version in 2023! Happy new year!
-## Preview
+# Preview
+
+![Screenshot 2023-12-31 at 17 03 08](https://github.com/gorouflex/AFKBot/assets/98001973/0ad12f3b-d5c3-401f-95f1-4ed54d0d8b9d)

@@ -29,7 +29,12 @@ def get_latest_beta_version():
     soup = BeautifulSoup(response.data, 'html.parser')
     beta_tags = soup.find_all('a', class_='Link--primary', href=lambda x: x and '/tag/' in x)
     if beta_tags:
-        return beta_tags[0].text.strip()
+        beta_versions = [tag.text.strip() for tag in beta_tags]
+        beta_versions_with_beta = [ver for ver in beta_versions if 'Beta' in ver]
+        if beta_versions_with_beta:
+            return beta_versions_with_beta[0]
+    return None
+
     
 def open_github():
     webbrowser.open("https://www.github.com/gorouflex/afkbot")

@@ -266,7 +266,7 @@ class MainWindow(customtkinter.CTk):
             button.pack(pady=5)
 
         self.version_label = customtkinter.CTkLabel(
-            self, width=215, text="Version 4.3.0 Stable", font=("", 14)
+            self, width=215, text="Version 4.3.1 Stable", font=("", 14)
         )
         self.version_label.pack(pady=5)
 

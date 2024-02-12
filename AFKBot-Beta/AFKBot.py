@@ -27,11 +27,13 @@ def get_latest_version():
 def get_latest_beta_version():
     response = http.request('GET', 'https://github.com/gorouflex/afkbot/releases')
     soup = BeautifulSoup(response.data, 'html.parser')
-    beta_tags = soup.find_all('a', class_='Link--primary', href=lambda x: x and '/tag/' in x)
-    if beta_tags:
+    if beta_tags := soup.find_all(
+        'a', class_='Link--primary', href=lambda x: x and '/tag/' in x
+    ):
         beta_versions = [tag.text.strip() for tag in beta_tags]
-        beta_versions_with_beta = [ver for ver in beta_versions if 'Beta' in ver]
-        if beta_versions_with_beta:
+        if beta_versions_with_beta := [
+            ver for ver in beta_versions if 'Beta' in ver
+        ]:
             return beta_versions_with_beta[0]
     return None
 
@@ -98,20 +100,24 @@ class SettingsWindow(customtkinter.CTk):
         self.title('Settings')
         self.geometry("520x290")
         self.resizable(False, False)
-        
+
         self.logo_label = customtkinter.CTkLabel(self, text="Settings", font=("", 19, "bold"))
         self.logo_label.pack(pady=5)
 
         self.keys_label = customtkinter.CTkLabel(self, text="Keys:", font=("", 14, "bold"))
         self.keys_label.pack(pady=5)
 
-        self.keys_entry = customtkinter.CTkEntry(self, placeholder_text=f"Keys", font=("", 15))
+        self.keys_entry = customtkinter.CTkEntry(
+            self, placeholder_text="Keys", font=("", 15)
+        )
         self.keys_entry.pack(pady=5)
 
         self.sleep_label = customtkinter.CTkLabel(self, text="Sleep time:", font=("", 14, "bold"))
         self.sleep_label.pack(pady=5)
 
-        self.sleep_entry = customtkinter.CTkEntry(self, placeholder_text=f"Sleep time", font=("", 15))
+        self.sleep_entry = customtkinter.CTkEntry(
+            self, placeholder_text="Sleep time", font=("", 15)
+        )
         self.sleep_entry.pack(pady=5)
 
         self.config_label = customtkinter.CTkLabel(

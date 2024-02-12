@@ -18,11 +18,13 @@ def get_latest_version():
 def get_latest_beta_version():
     response = http.request('GET', BETA_RELEASE_URL)
     soup = BeautifulSoup(response.data, 'html.parser')
-    beta_tags = soup.find_all('a', class_='Link--primary', href=lambda x: x and '/tag/' in x)
-    if beta_tags:
+    if beta_tags := soup.find_all(
+        'a', class_='Link--primary', href=lambda x: x and '/tag/' in x
+    ):
         beta_versions = [tag.text.strip() for tag in beta_tags]
-        beta_versions_with_beta = [ver for ver in beta_versions if 'Beta' in ver]
-        if beta_versions_with_beta:
+        if beta_versions_with_beta := [
+            ver for ver in beta_versions if 'Beta' in ver
+        ]:
             return beta_versions_with_beta[0]
     return None
 
@@ -39,8 +41,7 @@ def update_afkbot():
     caution_label.configure(text="Stable update successfully!")
 
 def update_beta_afkbot():
-    beta_version = get_latest_beta_version()
-    if beta_version:
+    if beta_version := get_latest_beta_version():
         beta_version_url = beta_version.replace(" ", "-")
         beta_download_url = f"https://github.com/gorouflex/AFKBot/releases/download/{beta_version_url}/AFKBot-Beta.zip"
         print(f"Downloading from: {beta_download_url}")

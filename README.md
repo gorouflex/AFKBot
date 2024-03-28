@@ -22,6 +22,7 @@
   <a href="#preview">Preview</a>       
 </p>
 
+## This repository will be archived by GFx from 28/3/24. Thank you for accompanying this project since I was still learning to use GitHub, and it has given me a lot of experience 🌟
 # Feature
 
 - Random clicks
